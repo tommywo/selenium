@@ -28,8 +28,8 @@ script:
   - export CHROME_BINARY=$PWD/chrome-linux/chrome
   - export CHROMEDRIVER=$PWD/chrome-linux/chromedriver
 
-  - export PY_FILES_CHANGED=`git diff --name-only $TRAVIS_COMMIT_RANGE | grep ^py/`
-  - export RB_FILES_CHANGED=`git diff --name-only $TRAVIS_COMMIT_RANGE | grep ^rb/`
+  - export PY_FILES_CHANGED=`git diff --name-only ${TRAVIS_COMMIT_RANGE/.../..} | grep ^py/`
+  - export RB_FILES_CHANGED=`git diff --name-only ${TRAVIS_COMMIT_RANGE/.../..} | grep ^rb/`
 
   - ./go clean build
   - |
